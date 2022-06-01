@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :ratings, only: [:create, :show, :update, :destroy]
+  resources :ratings, only: [:create, :show, :destroy]
   resources :samples, only: [:create, :show, :destroy]
   resources :userblinds, only: [:create, :destroy, :index, :show]
   resources :blinds, only: [:create, :destroy, :show, :update]
