@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_01_165716) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_01_171340) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,7 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_01_165716) do
   create_table "userblinds", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "blind_id", null: false
-    t.boolean "admin"
+    t.boolean "admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["blind_id"], name: "index_userblinds_on_blind_id"
@@ -63,6 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_01_165716) do
     t.string "profile_pic"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
   end
 
   create_table "whiskeys", force: :cascade do |t|
@@ -70,7 +71,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_01_165716) do
     t.float "proof"
     t.string "distiller"
     t.integer "age"
-    t.boolean "single_barrel"
+    t.string "whiskey_type"
+    t.boolean "single_barrel", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

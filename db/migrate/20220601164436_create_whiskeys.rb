@@ -4,8 +4,9 @@ class CreateWhiskeys < ActiveRecord::Migration[7.0]
       t.string :name
       t.float :proof
       t.string :distiller
-      t.integer :age
-      t.boolean :single_barrel
+      t.integer :age 
+      t.string :whiskey_type
+      t.boolean :single_barrel, :default => false
 
       t.timestamps
     end
