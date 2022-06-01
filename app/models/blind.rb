@@ -1,0 +1,2 @@
+class Blind < ApplicationRecord
+end

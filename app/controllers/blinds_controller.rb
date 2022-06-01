@@ -1,0 +1,2 @@
+class BlindsController < ApplicationController
+end

@@ -1,0 +1,2 @@
+class UserblindsController < ApplicationController
+end

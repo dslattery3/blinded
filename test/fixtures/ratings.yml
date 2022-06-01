@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sample: one
+  user: one
+  nose: 1
+  palate: 1
+  finish: 1
+  notes: MyString
+
+two:
+  sample: two
+  user: two
+  nose: 1
+  palate: 1
+  finish: 1
+  notes: MyString

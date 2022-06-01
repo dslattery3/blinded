@@ -1,0 +1,2 @@
+module UserblindsHelper
+end
