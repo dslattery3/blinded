@@ -6,7 +6,7 @@ class UsersController < ApplicationController
         # if params[:profile_pic]
         #     user.update(profile_pic: params[:profile_pic])
         # end
-        render json: user, status: :ok
+        render json: user, status: :created
     end
     
     def destroy
