@@ -3,21 +3,21 @@ class BlindsController < ApplicationController
     def create
         blind = Blind.create!(blind_params)
         userBlind = Userblind.create!(user_id: params[:user_id], blind_id: blind.id, admin: true)
-        render json: blind, status: :created
+        render json: blind, status: :ok
     end
 
     def destroy
-        blind = find_blind.call
+        blind = find_blind
         blind.destroy
         render json: {}, status: :ok
     end
 
     def show
-        render json: find_blind.call, status: :ok
+        render json: find_blind, status: :ok
     end
 
     def update
-        blind = find_blind.call
+        blind = find_blind
         blind.update(blind_params)
         render json: blind, status: :ok
     end
@@ -27,6 +27,8 @@ class BlindsController < ApplicationController
         params.permit(:name, :password, :reveal_date)
     end
 
-    find_blind = Proc.new {Blind.find_by!(id: params[:id])}
+    def find_blind
+        Blind.find_by!(id: params[:id])
+    end
 
 end
